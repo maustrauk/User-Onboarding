@@ -5,7 +5,7 @@ import * as yup from 'yup';
 import './App.css';
 import Form from './Form';
 import Users from './Users';
-import schema from './validation/shema';
+import schema from '../validation/shema';
 
 const initialFormValues = {
   name: "",

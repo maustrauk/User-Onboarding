@@ -1,0 +1,49 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+.users {
+  font-family: 'Architects Daughter', cursive;
+  display: flex;
+  justify-content: space-around;
+}
+
+.form-container {
+  font-family: 'Lobster', cursive;
+  margin-top: 2em;
+  width: 25%;
+  margin-left: auto;
+  margin-right: auto;
+  
+  border: 1px solid rgb(210, 210, 210);
+  border-radius: 6px;
+  box-shadow: 0px 1px 6px -2px rgb(128, 127, 127);
+  padding: 16px;
+  background-color: azure;
+}
+
+
+
+.form-container button {
+  border-radius: 16px;
+  background-color: coral;
+  margin-left: 35%;
+}
+
+.user-card {
+  border: 1px solid rgb(210, 210, 210);
+  border-radius: 6px;
+  box-shadow: 0px 1px 6px -2px rgb(128, 127, 127);
+  margin: 16px 8px;
+  padding: 16px;
+  background-color: goldenrod;
+}
+
+.user-card h2 {
+  text-transform: uppercase;
+}
+
+.errors {
+  color: red;
+  margin-bottom: 1em;
+}
