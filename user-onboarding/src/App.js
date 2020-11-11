@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import * as yup from 'yup';
 
 import './App.css';
@@ -20,10 +20,15 @@ const initialFormErrors ={
   terms: "",
 }
 
+const initialDisabled = true;
+
+const post_URL = "https://reqres.in/api/users";
+
 function App() {
 
   const [formValues, setFormValues] = useState(initialFormValues); 
   const [formErrors, setFormErrors] = useState(initialFormErrors);
+  const [disabled, setDisabled] = useState(initialDisabled);
 
   const inputChange = (name, value) => {
 
@@ -40,10 +45,29 @@ function App() {
     setFormValues({...formValues, [name] : value});
   }
 
+  const formSubmit = () => {
+
+    axios
+    .post(post_URL, formValues)
+    .then(res => {
+      console.log("Response:",res.status);
+    })
+    .catch(err => {
+      console.log("Error:",err);
+    })
+
+    setFormValues(initialFormValues);
+  }
+
+  useEffect(() => {
+    schema.isValid(formValues).then((valid) => {
+      setDisabled(!valid);
+    });
+  },[formValues])
 
   return (
     <div className="App">
-      <Form change={inputChange} values={formValues} errors={formErrors}/>
+      <Form change={inputChange} submit={formSubmit} disabled={disabled} values={formValues} errors={formErrors}/>
     </div>
   );
 }

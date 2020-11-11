@@ -2,7 +2,7 @@ import React from 'react';
 
 const Form = props => {
 
-    const {change, values, errors} = props;
+    const {change, submit, disabled, values, errors} = props;
 
     const onChange = evt => {
         const { name, value, checked, type } = evt.target;
@@ -10,9 +10,14 @@ const Form = props => {
         change(name, correctValue);
     }
     
+    const onSubmit = evt => {
+        evt.preventDefault();
+        submit();
+    }
+
     return(
         <div className="form">
-            <form>
+            <form onSubmit={onSubmit}>
                 <label>
                     Name : 
                     <input
@@ -48,12 +53,12 @@ const Form = props => {
                     <input
                     name = "terms"
                     type = "checkbox"
-                    value = {values.term}
+                    value = {values.terms}
                     onChange ={onChange}
                     />
                 </label>
                 <div className="errors">{errors.terms}</div>
-                <button>submit</button>
+                <button disabled={disabled}>submit</button>
             </form>
         </div>
     );

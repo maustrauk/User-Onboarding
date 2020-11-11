@@ -13,6 +13,7 @@ export default yup.object().shape({
     .string()
     .required("Password is required")
     .min(4, "Password must be atr least 4 chars long"),
- 
-  terms: yup.boolean(),
+  terms: yup
+    .boolean()
+    .oneOf([true], "You must accept the Terms of Service"),
 });
