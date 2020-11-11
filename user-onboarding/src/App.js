@@ -4,6 +4,7 @@ import * as yup from 'yup';
 
 import './App.css';
 import Form from './Form';
+import Users from './Users';
 import schema from './validation/shema';
 
 const initialFormValues = {
@@ -20,6 +21,8 @@ const initialFormErrors ={
   terms: "",
 }
 
+const initialUsers =[];
+
 const initialDisabled = true;
 
 const post_URL = "https://reqres.in/api/users";
@@ -29,6 +32,7 @@ function App() {
   const [formValues, setFormValues] = useState(initialFormValues); 
   const [formErrors, setFormErrors] = useState(initialFormErrors);
   const [disabled, setDisabled] = useState(initialDisabled);
+  const [users, setUsers] =useState(initialUsers);
 
   const inputChange = (name, value) => {
 
@@ -51,6 +55,7 @@ function App() {
     .post(post_URL, formValues)
     .then(res => {
       console.log("Response:",res.status);
+      setUsers([...users, res.data]);
     })
     .catch(err => {
       console.log("Error:",err);
@@ -67,6 +72,7 @@ function App() {
 
   return (
     <div className="App">
+      <Users users={users}/>
       <Form change={inputChange} submit={formSubmit} disabled={disabled} values={formValues} errors={formErrors}/>
     </div>
   );
