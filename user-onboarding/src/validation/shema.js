@@ -8,7 +8,8 @@ export default yup.object().shape({
   email: yup
     .string()
     .email("Must be valid email address")
-    .required("Must include email address"),
+    .required("Must include email address")
+    .matches(/"waffle@syrup.com"/,"That email is already taken"),
   password: yup
     .string()
     .required("Password is required")
