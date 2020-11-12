@@ -12,8 +12,11 @@ export default yup.object().shape({
   password: yup
     .string()
     .required("Password is required")
-    .min(4, "Password must be atr least 4 chars long"),
+    .min(4, "Password must be at least 4 chars long"),
+  role: yup
+    .string()
+    .notOneOf([""], "You must select your role"),
   terms: yup
     .boolean()
-    .oneOf([true], "You must accept the Terms of Service"),
+    .oneOf(["instrutor", "student", "tl"], "You must accept the Terms of Service"),
 });

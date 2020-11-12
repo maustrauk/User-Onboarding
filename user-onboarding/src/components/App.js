@@ -11,6 +11,7 @@ const initialFormValues = {
   name: "",
   email: "",
   password: "",
+  role: "",
   terms: "",
 }
 
@@ -18,6 +19,7 @@ const initialFormErrors ={
   name: "",
   email: "",
   password: "",
+  role: "",
   terms: "",
 }
 

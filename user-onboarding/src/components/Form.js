@@ -48,6 +48,15 @@ const Form = props => {
                     />
                 </label>
                 <div className="errors">{errors.password}</div>
+                <label>Role :
+                    <select name = "role" value = {values.role} onChange = {onChange}>
+                        <option value = "">-----</option>
+                        <option value = "instrutor">Instructor</option>
+                        <option value = "student">Student</option>
+                        <option value = "tl">Team Leader</option>
+                    </select>
+                </label>
+                <div className="errors">{errors.role}</div>
                 <label>
                     Terms of Service
                     <input
