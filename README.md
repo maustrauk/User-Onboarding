@@ -99,10 +99,10 @@ This project is a continuation of the work you have done previously.
 - [*] Install Cypress with npm.
       `npm install cypress --save-dev`
 - [*] run `npx cypress open`, After a moment, the Cypress Test Runner will launch.
-- [ ]  Locate the integration folder at cypress/integration in your code editor
-- [ ]  Create a form_test.js file.
-- [ ]  Watch the Cypress Test Runner update the list of specs.
-- [ ] Launch Cypress in interactive mode.
+- [*]  Locate the integration folder at cypress/integration in your code editor
+- [*]  Create a form_test.js file.
+- [*]  Watch the Cypress Test Runner update the list of specs.
+- [*] Launch Cypress in interactive mode.
       
 *Note:* 
 You will see an error that says "No tests found in your file:" with your particular file path. This is because we have not written any tests yet. Now you will start writing tests.
