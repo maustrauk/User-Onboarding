@@ -35,6 +35,7 @@ const Form = props => {
                     type = "email"
                     value = {values.email}
                     onChange ={onChange}
+                    placeholder="my@email.com"
                     />
                 </label>
                 <div className="errors">{errors.email}</div>
@@ -57,6 +58,38 @@ const Form = props => {
                     </select>
                 </label>
                 <div className="errors">{errors.role}</div>
+                <label>
+                    Date of Birth : 
+                    <input
+                    name = "dob"
+                    type = "date"
+                    value = {values.dob}
+                    onChange ={onChange}
+                    />
+                </label>
+                <div className="errors">{errors.dob}</div>
+                <label>
+                    Mobile number : 
+                    <input
+                    name = "tel"
+                    type = "tel"
+                    value = {values.tel}
+                    onChange ={onChange}
+                    placeholder="11 digits phone format"
+                    />
+                </label>
+                <div className="errors">{errors.tel}</div>
+                <label>
+                    Github : 
+                    <input
+                    name = "git"
+                    type = "url"
+                    value = {values.url}
+                    onChange ={onChange}
+                    placeholder="Your's Github account url"
+                    />
+                </label>
+                <div className="errors">{errors.url}</div>
                 <label>
                     Terms of Service
                     <input

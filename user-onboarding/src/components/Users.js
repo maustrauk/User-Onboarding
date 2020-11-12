@@ -2,13 +2,17 @@ import React from 'react';
 
 
 const UserCard = props => {
-    
-    const {name, email} = props;
+
+    const {user} = props;
 
     return (
         <div className="user-card">
-            <h2>{name}</h2>
-            <p>Email: {email}</p>
+            <h2>{user.name}</h2>
+            <p>Email: {user.email}</p>
+            <p>Role: {user.role}</p>
+            <p>Date of Birth: {user.dob}</p>
+            <p>Phone: {user.tel}</p>
+            <p>GitHub account: {user.git}</p>
         </div>
     )
 }
@@ -19,7 +23,7 @@ const Users = props => {
 
     return(
         <div className="users">
-            {users.map(user => <UserCard name={user.name} email={user.email} />)}
+            {users.map((user, i) => <UserCard key={i} user={user} />)}
         </div>
     )
 }
