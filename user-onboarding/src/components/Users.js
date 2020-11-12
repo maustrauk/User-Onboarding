@@ -3,10 +3,10 @@ import React from 'react';
 
 const UserCard = props => {
 
-    const {user} = props;
+    const {user, id} = props;
 
     return (
-        <div className="user-card">
+        <div className="user-card" id={`card${id}`}>
             <h2>{user.name}</h2>
             <p>Email: {user.email}</p>
             <p>Role: {user.role}</p>
@@ -23,7 +23,7 @@ const Users = props => {
 
     return(
         <div className="users">
-            {users.map((user, i) => <UserCard key={i} user={user} />)}
+            {users.map((user, i) => <UserCard key={i} user={user} id={i} />)}
         </div>
     )
 }

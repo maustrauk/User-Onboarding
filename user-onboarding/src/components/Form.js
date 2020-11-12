@@ -17,7 +17,7 @@ const Form = props => {
 
     return(
         <div className="form-container">
-            <form onSubmit={onSubmit}>
+            <form onSubmit={onSubmit} id="my_form">
                 <label>
                     Name : 
                     <input

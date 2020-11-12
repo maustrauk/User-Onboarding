@@ -14,7 +14,7 @@ export default yup.object().shape({
     .string()
     .required("Password is required")
     .min(4, "Password must be at least 4 chars long"),
-  role: yup
+  /*role: yup
     .string()
     .required("You must select your role"),
   dob: yup
@@ -30,6 +30,7 @@ export default yup.object().shape({
   git: yup
     .string()
     .url("Must be URL of your's Github account"),
+    */
   terms: yup
     .boolean()
     .oneOf([true], "You must accept the Terms of Service"),
